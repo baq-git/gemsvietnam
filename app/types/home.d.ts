@@ -11,11 +11,11 @@ export interface Gem {
 
 export interface GemCategory {
   id: string
-  category_name: CategoryName
+  categoryName: CategoryName
   slug: string
   description: string
-  created_at: Date
-  updated_at: Date
+  createdAt?: Date
+  updatedAt?: Date
 }
 
 export type GemCategoryName =

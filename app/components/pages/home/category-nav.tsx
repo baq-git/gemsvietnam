@@ -24,7 +24,7 @@ import type { GemCategory } from '@/types/home'
 import { useQuery } from '@tanstack/react-query'
 import { getCategories } from '@/services/categories.service'
 
-const iconMap: Record<GemCategory['category_name'], LucideIcon> = {
+const iconMap: Record<GemCategory['categoryName'], LucideIcon> = {
   All: Globe,
   Waterfalls: Droplet,
   Beaches: Umbrella,
@@ -57,7 +57,7 @@ export default function CategoryNav({}: GemCategoryNavProps) {
   })
 
   const categories = gemCategories?.map((item: GemCategoryNavItem) => {
-    const icon = iconMap[item.category_name]
+    const icon = iconMap[item.categoryName]
     return {
       ...item,
       icon,
@@ -93,7 +93,7 @@ export default function CategoryNav({}: GemCategoryNavProps) {
               >
                 {category.icon ? <category.icon size={24} /> : null}
               </div>
-              <span>{category.category_name}</span>
+              <span>{category.categoryName}</span>
               {activeCategory === category.id && (
                 <div className="mt-1 h-0.5 w-full rounded-full bg-rose-500" />
               )}
